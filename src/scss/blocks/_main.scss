@@ -27,7 +27,6 @@
         width: 270px;
         height: 270px;
         position: relative;
-        border-radius: 10px 10px 0 0;
         img {
             position: absolute;
             top: 0;
@@ -39,7 +38,7 @@
         }
     }
     &__descr {
-        width: 100%;
+        width: 270px;
         height: 50px;
         padding: 0 10px;
         display: flex;
