@@ -47,6 +47,14 @@ body {
   cursor: pointer;
 }
 
+.close {
+  display: block;
+  color: rgba(251, 141, 50, 0.8);
+  font-size: 60px;
+  line-height: 60%;
+  cursor: pointer;
+}
+
 .header {
   width: 100%;
   margin-top: 80px;
@@ -181,6 +189,11 @@ body {
   -webkit-transform: translate(-50%, -50%) scale(1);
       -ms-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
+}
+.full-photo__close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
 }
 
 .footer {

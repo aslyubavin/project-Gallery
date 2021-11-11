@@ -27,4 +27,9 @@
             transform: translate(-50%, -50%) scale(1);
         }
     }
+    &__close {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+    }
 }

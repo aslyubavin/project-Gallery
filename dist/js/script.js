@@ -13,7 +13,25 @@ window.addEventListener('DOMContentLoaded', () => {
                 fullPhoto.classList.add(activeClass);
             }
         });
+        
+        function closePhoto(e) {
+            let target = e.target;
+            if (target.matches(fullPhotoSelector) || target.matches('.close')) {
+                fullPhoto.classList.remove(activeClass);
+            }
+        }
+
+        function closePhotoByEsc(e) {
+            let code = e.code;
+            if (code === 'Escape' && fullPhoto.classList.contains(activeClass)) {
+                fullPhoto.classList.remove(activeClass);
+            }
+        }
+
+        fullPhoto.addEventListener('click', closePhoto);
+        document.addEventListener('keydown', closePhotoByEsc); 
     }
 
     openPhoto('.main__wrapper', '.full-photo', 'full-photo_active');
+
 }); 
