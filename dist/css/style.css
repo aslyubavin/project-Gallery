@@ -49,19 +49,20 @@ body {
 
 .header {
   width: 100%;
-  padding-top: 80px;
+  margin-top: 80px;
+}
+@media (max-width: 991.98px) {
+  .header {
+    text-align: center;
+  }
 }
 .header__title {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-family: "Architects Daughter", cursive;
   font-size: 50px;
   letter-spacing: 3px;
   color: #fff;
   text-shadow: 0 0 10px #fb8d32, 0 0 20px #fb8d32, 0 0 40px #fb8d32, 0 0 80px #fb8d32, 0 0 160px #fb8d32;
-}
-.header__add {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 .header__add span {
   font-size: 18px;
@@ -69,5 +70,86 @@ body {
   color: #fff;
 }
 .header__btn {
-  margin-left: 30px;
+  margin-left: 20px;
+}
+
+.main {
+  width: 100%;
+  margin: 60px 0;
+}
+.main__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  grid-template-rows: 320px;
+  grid-auto-rows: 320px;
+  gap: 20px;
+}
+@media (max-width: 991.98px) {
+  .main__wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.main__item {
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  -o-transition: transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+@media (min-width: 768px) {
+  .main__item:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+.main__photo {
+  width: 270px;
+  height: 270px;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+.main__photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.main__descr {
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
+.main__descr p {
+  font-weight: 600;
+}
+
+.footer {
+  padding: 10px 0;
+  text-align: center;
+}
+.footer span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
 }
