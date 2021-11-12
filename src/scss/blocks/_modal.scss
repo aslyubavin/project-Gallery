@@ -1,0 +1,40 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    &__inner {
+        max-width: 320px;
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+        background: rgba($color: #fb8d32, $alpha: 0.3);
+        border: 1px solid rgba($color: #fb8d32, $alpha: 0.7);
+        @media(max-width: 575.98px) {
+            padding: 10px;
+        }
+    }
+    &__input {
+        display: block;
+        padding: 0 10px;
+        margin-bottom: 15px;
+        width: 280px;
+        height: 35px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        &:focus {
+            outline: 2px solid rgba(0, 0, 0, 0.4);
+        }
+    }
+    &__btn {
+        display: block;
+        margin: 0 auto;
+    }
+}
