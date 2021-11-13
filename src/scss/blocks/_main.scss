@@ -44,6 +44,23 @@
             object-fit: cover;
             border-radius: 10px 10px 0 0;
         }
+        span {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 10;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 0 10px 0 10px;
+            background: rgba(255, 111, 111, 0.5);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            @media (min-width: 768px) {
+                &:hover {
+                    background: rgba(255, 111, 111, 1);
+                }
+            }
+        }
     }
     &__name {
         width: 270px;

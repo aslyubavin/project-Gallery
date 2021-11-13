@@ -38,9 +38,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         const item = document.createElement('div');
         item.classList.add('main__item');
+        item.setAttribute('data-name', name);
         item.innerHTML = `
         <div class="main__photo">
             <img src="${url}" alt="photo">
+            <span class="icon-delete" data-button="delete-photo"></span>
         </div>
         <div class="main__name"><p>${name}</p></div> 
         `;
@@ -111,6 +113,14 @@ window.addEventListener('DOMContentLoaded', () => {
         if (e.target.matches('img')) {
             fullPhoto.querySelector('img').src = e.target.src;
             openModal(fullPhoto, 'full-photo_active');
+        }
+        if (e.target.matches('[data-button="delete-photo"]')) {
+            const item = e.target.parentElement.parentElement;
+            item.remove();
+            localStorage.removeItem(item.getAttribute('data-name'));
+            if (Object.keys({...localStorage}).length === 0) {
+                emptyBlock.style.display = 'block';
+            }
         }
     });
 
