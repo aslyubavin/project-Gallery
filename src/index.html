@@ -14,85 +14,14 @@
             <h1 class="header__title">Your Gallery</h1>
             <div class="header__add">
                 <span>Add your photo</span>
-                <button class="header__btn btn">+</button>
+                <button class="header__btn btn" data-function="open-modal">+</button>
             </div>
         </div>
     </header> 
     <main class="main">
         <div class="container">
+            <div class="main__empty">EMPTY</div>
             <div class="main__wrapper">
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://static.independent.co.uk/2021/07/20/06/GettyImages-1233968634.jpg?width=1200&auto=webp&quality=75" alt="photo">
-                    </div>
-                    <div class="main__name"><p>WWWWWWWWWWWWWWW</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://dogcatdog.ru/wp-content/uploads/0/8/1/081f66e76273dec40dc8d30534fa0aa3.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://dallasnews.imgix.net/43329-Snow%20monkey.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://images.unian.net/photos/2020_07/thumb_files/1000_545_1596013990-8363.jpg?1" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://dallasnews.imgix.net/43329-Snow%20monkey.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://static.independent.co.uk/2021/07/20/06/GettyImages-1233968634.jpg?width=1200&auto=webp&quality=75" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://dogcatdog.ru/wp-content/uploads/0/8/1/081f66e76273dec40dc8d30534fa0aa3.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://dallasnews.imgix.net/43329-Snow%20monkey.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://images.unian.net/photos/2020_07/thumb_files/1000_545_1596013990-8363.jpg?1" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://dallasnews.imgix.net/43329-Snow%20monkey.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
-                <div class="main__item">
-                    <div class="main__photo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg" alt="photo">
-                    </div>
-                    <div class="main__name"><p>A monkey</p></div> 
-                </div>
             </div>
         </div>
     </main>
@@ -100,7 +29,7 @@
         <span>Copyright © Lyubavin 2021</span>
     </footer>
     <div class="full-photo">
-        <img src="https://dogcatdog.ru/wp-content/uploads/0/8/1/081f66e76273dec40dc8d30534fa0aa3.jpg" alt="photo">
+        <img src="" alt="photo">
         <span class="full-photo__close close">&#xd7;</span>
     </div>
     <div class="modal">
@@ -109,10 +38,11 @@
                 <input class="modal__input" type="text" name="url" data-input="url" placeholder="Type a URL link image" required>
                 <input class="modal__input" type="text" name="name" data-input="name" placeholder="Type a name (up to 15 characters)" maxlength="15" required>
                 <button class="modal__btn btn">+</button>
+                <p class="modal__message"></p>
             </form>
         </div>
         <span class="full-photo__close close">&#xd7;</span>
     </div>
-    <script src="js/script.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
