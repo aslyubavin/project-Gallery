@@ -1,13 +1,17 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
-    //=========================================add/render photo
-    const btnOpenAddModal = document.querySelector('[data-function="open-modal"]'),
-        modal = document.querySelector('.modal'),
-        modalMessage = modal.querySelector('.modal__message'),
-        modalForm = modal.querySelector('.modal__form'),
+    //=========================================add/render/delete photo
+    const btnOpenAddModal = document.querySelector('[data-button="add-photo"]'),
+        modalAdd = document.querySelector('[data-modal="add-photo"]'),
+        modalMessage = modalAdd.querySelector('.modal__message'),
+        modalForm = modalAdd.querySelector('.modal__form'),
         inputUrl = modalForm.querySelector('[data-input="url"]'),
         inputName = modalForm.querySelector('[data-input="name"]'),
+        btnOpenDeleteAllModal = document.querySelector('[data-button="delete-all-photos"]'),
+        modalDeleteAll = document.querySelector('[data-modal="delete-all-photos"]'),
+        btnCancelDeleteAll = document.querySelector('[data-button="cancel-delete-all-photos"]'),
+        btnConfirmDeleteAll = document.querySelector('[data-button="confirm-delete-all-photos"]'),
         emptyBlock = document.querySelector('.main__empty'),
         gallery = document.querySelector('.main__wrapper'),
         fullPhoto = document.querySelector('.full-photo');
@@ -64,26 +68,43 @@ window.addEventListener('DOMContentLoaded', () => {
         modalSelector.classList.remove(activeClass);
     }
 
-    btnOpenAddModal.addEventListener('click', (e) => {
+    btnOpenAddModal.addEventListener('click', () => {
         modalForm.reset();
         modalMessage.innerText = '';
-        openModal(modal, 'modal_active');
+        openModal(modalAdd, 'modal_active');
+        modalForm.addEventListener('submit', (e) => {
+            if (addPhoto(inputName.value.toUpperCase(), inputUrl.value)) {
+                closeModal(modalAdd, 'modal_active');
+            } else {
+                e.preventDefault();
+                modalMessage.innerText = 'That name is taken!';
+            }
+        });
+        modalAdd.addEventListener('click', (e) => {
+            if (e.target.matches('.modal') || e.target.matches('.close')) {
+                closeModal(modalAdd, 'modal_active');
+            }
+        });
     });
 
-    modal.addEventListener('click', (e) => {
-        if (e.target.matches('.modal') || e.target.matches('.close')) {
-            closeModal(modal, 'modal_active');
-        }
+    btnOpenDeleteAllModal.addEventListener('click', () => {
+        openModal(modalDeleteAll, 'modal_active');
+        btnCancelDeleteAll.addEventListener('click', () => {
+            closeModal(modalDeleteAll, 'modal_active');
+        });
+        btnConfirmDeleteAll.addEventListener('click', () => {
+            localStorage.clear();
+            gallery.innerHTML = '';
+            emptyBlock.style.display = 'block';
+            closeModal(modalDeleteAll, 'modal_active');
+        });
+        modalDeleteAll.addEventListener('click', (e) => {
+            if (e.target.matches('.modal') || e.target.matches('.close')) {
+                closeModal(modalDeleteAll, 'modal_active');
+            }
+        });
     });
 
-    modalForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (addPhoto(inputName.value.toUpperCase(), inputUrl.value)) {
-            closeModal(modal, 'modal_active');
-        } else {
-            modalMessage.innerText = 'That name is taken!';
-        }
-    });
 
     //=========================================open full photo
     gallery.addEventListener('click', (e) => {
@@ -104,8 +125,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (e.code === 'Escape' && fullPhoto.classList.contains('full-photo_active')) {
             closeModal(fullPhoto, 'full-photo_active');
         }
-        if (e.code === 'Escape' && modal.classList.contains('modal_active')) {
-            closeModal(modal, 'modal_active');
+        if (e.code === 'Escape' && modalAdd.classList.contains('modal_active')) {
+            closeModal(modalAdd, 'modal_active');
+        }
+        if (e.code === 'Escape' && modalDeleteAll.classList.contains('modal_active')) {
+            closeModal(modalDeleteAll, 'modal_active');
         }
     });
     

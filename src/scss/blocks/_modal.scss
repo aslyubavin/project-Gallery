@@ -23,6 +23,10 @@
         @media(max-width: 575.98px) {
             padding: 10px;
         }
+        &_delete-all {
+            background: rgba(255, 111, 111, 0.5);
+            border: 1px solid rgba(255, 111, 111, 0.7);
+        }
     }
     &__input {
         display: block;
@@ -44,5 +48,22 @@
     &__message {
         color: #fff;
         text-align: center;
+    }
+    &__close {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+    }
+    &__text {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #fff;
+    }
+    &__btns {
+        display: flex;
+        justify-content: space-around;
+        min-width: 195px;
     }
 }

@@ -12,9 +12,13 @@
     <header class="header">
         <div class="container">
             <h1 class="header__title">Your Gallery</h1>
-            <div class="header__add">
-                <span>Add your photo</span>
-                <button class="header__btn btn" data-function="open-modal">+</button>
+            <div class="header__nav header__nav_add">
+                <p>Add your photo</p>
+                <button class="btn btn_add" data-button="add-photo">+</button>
+            </div>
+            <div class="header__nav header__nav_delete">
+                <p>Delete ALL photos</p>
+                <button class="btn btn_deleteAll" data-button="delete-all-photos"><span class="icon-delete"></span></button>
             </div>
         </div>
     </header> 
@@ -32,7 +36,7 @@
         <img src="" alt="photo">
         <span class="full-photo__close close">&#xd7;</span>
     </div>
-    <div class="modal">
+    <div class="modal" data-modal="add-photo">
         <div class="modal__inner">
             <form class="modal__form">
                 <input class="modal__input" type="text" name="url" data-input="url" placeholder="Type a URL link image" required>
@@ -41,8 +45,18 @@
                 <p class="modal__message"></p>
             </form>
         </div>
-        <span class="full-photo__close close">&#xd7;</span>
+        <span class="modal__close close">&#xd7;</span>
     </div>
-    <script src="js/script.js"></script>
+    <div class="modal modal_delete-all" data-modal="delete-all-photos">
+        <div class="modal__inner modal__inner_delete-all">
+            <p class="modal__text">Are you sure?<br>All photos will be deleted!</p>
+            <div class="modal__btns">
+                <button class="btn btn_fz18" data-button="cancel-delete-all-photos">No</button>
+                <button class="btn btn_deleteAll" data-button="confirm-delete-all-photos"><span class="icon-delete"></span></button>
+            </div>
+        </div>
+        <span class="modal__close close close_delete-all">&#xd7;</span>
+    </div>
+    <script src="js/script.min.js"></script>
 </body>
 </html>

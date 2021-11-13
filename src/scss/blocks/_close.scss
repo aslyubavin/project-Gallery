@@ -4,4 +4,7 @@
     font-size: 60px;
     line-height: 60%;
     cursor: pointer;
+    &_delete-all {
+        color: rgba(255, 111, 111, 0.7);
+    }
 }

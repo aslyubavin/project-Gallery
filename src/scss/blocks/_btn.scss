@@ -7,4 +7,35 @@
     text-align: center;
     font-size: 30px;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &_add {
+        @media(min-width: 768px) {
+            &:hover {
+                box-shadow: 0 0 10px #fb8d32,
+                0 0 20px #fb8d32,
+                0 0 40px #fb8d32,
+                0 0 80px #fb8d32,
+                0 0 160px #fb8d32;
+            }
+        }
+    }
+    &_deleteAll {
+        background: rgba(255, 111, 111, 0.876);
+        @media(min-width: 768px) {
+            &:hover {
+                box-shadow: 0 0 10px rgba(255, 111, 111, 1),
+                0 0 20px rgba(255, 111, 111, 1),
+                0 0 40px rgba(255, 111, 111, 1),
+                0 0 80px rgba(255, 111, 111, 1),
+                0 0 160px rgba(255, 111, 111, 1);
+            }
+        }
+        span {
+            color: #202124;
+            font-size: 22px;
+        }
+    }
+    &_fz18 {
+        font-size: 18px;
+    }
 }
