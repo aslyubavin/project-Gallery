@@ -246,9 +246,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -257,6 +257,10 @@ body {
 }
 .main__name p {
   font-weight: 600;
+}
+.main__name span {
+  text-align: right;
+  color: rgba(32, 33, 36, 0.7);
 }
 
 .full-photo {

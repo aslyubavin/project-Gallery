@@ -67,12 +67,16 @@
         height: 50px;
         padding: 0 10px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         background: #fff;
         border-radius: 0 0 10px 10px;
         p {
             font-weight: 600;
+        }
+        span {
+            text-align: right;
+            color: rgba($color: #202124, $alpha: 0.7);
         }
     }
 }

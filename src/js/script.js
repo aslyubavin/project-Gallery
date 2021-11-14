@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
-    //=========================================add/render/delete photo
+    //=========================================add/render/delete all photo
     const btnOpenAddModal = document.querySelector('[data-button="add-photo"]'),
         modalAdd = document.querySelector('[data-modal="add-photo"]'),
         modalMessage = modalAdd.querySelector('.modal__message'),
@@ -44,7 +44,9 @@ window.addEventListener('DOMContentLoaded', () => {
             <img src="${url}" alt="photo">
             <span class="icon-delete" data-button="delete-photo"></span>
         </div>
-        <div class="main__name"><p>${name}</p></div> 
+        <div class="main__name">
+            <p>${name}</p>
+        </div> 
         `;
         gallery.appendChild(item);
     }
@@ -108,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    //=========================================open full photo
+    //=========================================open full/delete definite photo
     gallery.addEventListener('click', (e) => {
         if (e.target.matches('img')) {
             fullPhoto.querySelector('img').src = e.target.src;
